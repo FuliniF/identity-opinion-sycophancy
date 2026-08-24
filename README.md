@@ -67,22 +67,38 @@ python scenario_synthesis.py --model <generator-model> --temperature 0.5 \
 python narrative_synthesis.py --model <generator-model> --temperature 0.5 \
   --input-dir ../data/scenarios/final --output-dir ../data/scenarios/final
 
-# 3. Generate subject-model responses. Use local, ignored output paths.
+# 3. Create persona-neutral narratives from the same anchor events.
+python narrative_synthesis_neutral.py --model <generator-model> --temperature 0.5
+
+# 4. Generate the main response conditions. Use local, ignored output paths.
 python generate_responses.py --model <subject-model> --temperature 0 \
   --input-dir ../data/scenarios/final --output-dir ../responses/<subject-model>
 
-# 4. Evaluate a response set with an LLM judge.
+# 5. Generate responses conditioned on a user opinion, without a persona.
+python opinion_only.py --model <subject-model> --workers 16
+
+# 6. Generate responses conditioned on both a persona and a user opinion.
+python opinion_only_roleplay.py --model <subject-model> --workers 16
+
+# 7. Evaluate the main response conditions with an LLM judge.
 python evaluate.py --eval_model <judge-model> --response_model <subject-model> \
   --datapath ../responses/<subject-model> \
   --result_dir ../evaluations/<judge-model>/<subject-model>
+
+# 8. Evaluate the user-opinion-only responses.
+python evaluate_opinion_only.py --model <subject-model> \
+  --eval_model <judge-model> --workers 64 \
+  --out_dir ../evaluations/<judge-model>/opinion_only
+
+# 9. Evaluate the persona-and-opinion responses.
+python evaluate_opinion_only_roleplay.py --model <subject-model> \
+  --eval_model <judge-model> --workers 64 \
+  --out_dir ../evaluations/<judge-model>/opinion_only_roleplay
 ```
 
-For the additional opinion-only condition, use `narrative_synthesis_neutral.py`,
-`opinion_only.py`, `opinion_only_roleplay.py`, `evaluate_opinion_only.py`, and
-`evaluate_opinion_only_roleplay.py`. `subject_models.py` is the single source
-of truth for the model roster. The remaining scripts support retries,
-multi-judge aggregation, audits, analysis, and plotting, all over local output
-paths.
+`subject_models.py` is the single source of truth for the model roster. The
+remaining scripts support retries, multi-judge aggregation, audits, analysis,
+and plotting, all over local output paths.
 
 ## Repository contents
 
