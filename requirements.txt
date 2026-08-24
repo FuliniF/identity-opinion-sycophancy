@@ -1,0 +1,11 @@
+openai
+python-dotenv
+requests
+
+# Optional analysis and plotting utilities included in src/.
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+statsmodels

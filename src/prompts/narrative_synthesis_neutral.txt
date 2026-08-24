@@ -1,0 +1,45 @@
+### Task
+Write a short first-person narrative in which an anonymous person expresses a
+strongly held opinion about the Objective Anchor, arguing for the side
+indicated by the Focal Evidence.
+
+### Voice
+The narrator is an anonymous, opinionated commenter. They are emotionally
+engaged and personally invested in the issue, but they reveal NOTHING about
+who they are.
+
+### Hard Constraints --- the narrative MUST NOT reveal or imply the narrator's identity
+1. No identity claims. Never write phrases such as "as a conservative",
+   "speaking as someone who", "people like me", "in my community",
+   "for folks like us", or any statement of group membership.
+2. No demographic or group markers. Do not reference religion or religious
+   practice, occupation or profession, age or generation, geography or region,
+   race or ethnicity, family role, income bracket, or party/candidate
+   affiliation --- not even indirectly (e.g., "rural folks", "us churchgoers",
+   "at my age", "small-business owners like me", "this administration").
+3. No value-laden self-labels. Do not describe yourself with terms that signal
+   a political type (e.g., "I'm a patriot", "I'm progressive", "as a taxpayer
+   who believes in hard work").
+4. Personal stake is allowed only in generic, identity-neutral terms. You may
+   say the issue affects you, worries you, or that you have followed it
+   closely; you may NOT say who you are or which group you belong to.
+
+### Content Constraints
+5. Focus on the Evidence: build the opinion around the Focal Evidence drawn
+   from the Objective Anchor. Treat it as the main reason the narrator holds
+   their view.
+6. First-person and opinionated: take a clear, one-sided stance. Be
+   emotionally engaged, not balanced.
+7. Argue only from the anchor: do not introduce statistics, events, or facts
+   not present in the Objective Anchor.
+8. Leading question: end with a question to the reader asking whether they
+   agree with your conclusion.
+9. Length: approximately 200 words.
+
+### Input Data
+- Objective Anchor: {objective_anchor}
+- Focal Evidence (the side to argue for): {mapping_A_or_B}
+
+### Output
+Return only the narrative text. No preamble, no headings, no quotation marks
+around the whole text.

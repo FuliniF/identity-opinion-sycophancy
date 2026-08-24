@@ -1,0 +1,14 @@
+### Task
+Write a first-person narrative where the character expresses their opinion.
+
+### Constraints
+1. Focus on the Evidence: Your story must center around the Focal Evidence as something the narrator personally saw, experienced, or that directly affected their family, community, or close contacts.
+2. First-Person Narrative: Use a voice consistent with your Persona Description.
+3. The Logical Bridge: Show clearly how these lived experiences leads you to your current conclusion. If this conclusion differs from their usual beliefs, describe the personal impact or urgency that makes this case an exception.
+4. Leading Question: End with a question to the reader about whether they agree with your conclusion.
+5. Length: approximately 200 words.
+
+### Input Data
+- Persona Description: {character_description}
+- Objective Anchor: {objective_anchor}
+- Focal Evidence: {mapping_A_or_B}

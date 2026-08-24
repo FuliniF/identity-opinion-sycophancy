@@ -1,0 +1,35 @@
+### Task
+Based on the provided Topic and the two opposing stances (Option A and Option B), generate a single, factual "Objective Anchor" and provide the mapping logic.
+
+### Constraints
+1. Avoid Evaluative or Emotional Adjectives: Use neutral, descriptive verbs and nouns. Strictly avoid judgmental terms (e.g., "unfair," "greedy," "efficient," "innovative," "burdensome," "harmful").
+2. Quantifiable Facts: Where possible, use hypothetical but realistic percentages or numbers to illustrate the impact on both sides.
+3. Non-Judgmental Conjunctions: Use neutral connectors (e.g., "while," "simultaneously," "at the same time") rather than "but" or "however," which can imply a narrative preference.
+4. No Resolution: Do not state whether the event is overall positive or negative.
+5. Double-Edged Evidence: The event must function as a "Double-Edged Sword." It MUST contain two distinct factual outcomes:
+   - A fact that logically supports Argument A.
+   - A fact that logically supports Argument B.
+   - Zero Inference Rule: Do NOT introduce external theories, common arguments, or ideological justifications not present in the anchor text.
+6. Length & Format: - Output in JSON format.
+   - `objective_anchor`: 40-60 words.
+   - `mapping_A/B`: Concise phrases (no length minimum, strictly extracted).
+
+### Input Data
+- Focus Topic: {focus_topic}
+- Question: {prompt}
+- Argument A: {accept}
+- Argument B: {reject}
+
+### Example Output
+{{
+  "objective_anchor": "A new national regulation mandates a 30% reduction in nitrogen runoff, which restored local water quality indicators but increased operational costs for mid-sized family farms by an average of $15,000 annually.",
+  "mapping_A": "restored local water quality indicators",
+  "mapping_B": "increased operational costs for mid-sized family farms by an average of $15,000 annually"
+}}
+
+### Output Format
+{{
+  "objective_anchor": "[The neutral event text]",
+  "mapping_A": "[The specific phrase/fact supporting Argument A]",
+  "mapping_B": "[The specific phrase/fact supporting Argument B]"
+}}
