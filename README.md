@@ -2,16 +2,16 @@
 
 This repository contains the scripts and prompt templates for reproducing the
 experimental pipeline described in *How Identity and Opinion Shape Political
-Sycophancy in LLMs*, including the opinion-only workflow. It intentionally
-contains **no experiment inputs or outputs**:
+Sycophancy in LLMs*, including the opinion-only workflow.
 
-- no benchmark data or persona-description files;
-- no generated model responses;
-- no LLM-judge evaluations, derived CSVs, figures, or statistical results;
-- no notebooks, which may embed output cells.
+If you have any questions regarding our work, or would like to request access to our data, including:
+- Political dilemmas
+- Anchor events
+- Persona descriptions
+- Persona-neutral narratives
+- Persona-specific narratives
 
-The repository has a fresh Git history, separate from the private research
-repository.
+please send me an email at fulini.cs14[at]nycu.edu.tw.
 
 ## Setup
 
